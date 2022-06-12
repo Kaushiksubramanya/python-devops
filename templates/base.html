@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My App</title>
+</head>
+<body>
+<center><h1>My Daily Checklist</h1></center>
+<form action="/insert" method="post">
+    <input type="text" name="c_name">
+    <button type="submit">Add</button>
+</form>
+<h2>Recent task added: {{c_name}}</h2>
+
+<center><h4>Added Task</h4></center>
+{% for i in mylist %}
+{{i.c_id}} | {{i.c_name}} <a href="/delete/{{i.c_id}}">Delete Task</a> <br><br>
+{% endfor %}
+
+</body>
+</html>
